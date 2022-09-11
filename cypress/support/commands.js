@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('SelectValueFromList', function(locator,search) {
+    cy.xpath(locator)
+    .each((ele)=>
+    {
+          // ele is a wrapped jQuery element
+        cy.log(ele.text());
+
+        if(ele.text().includes(search))
+        { 
+               // wrap this element so we can
+            // use cypress commands on it
+            cy.wrap(ele).click({force:true});
+        }
+       
+    });
+  })

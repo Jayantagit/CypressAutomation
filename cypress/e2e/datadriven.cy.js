@@ -1,11 +1,13 @@
 import user from '../fixtures/user.json'
+import LoginPage from '../support/Pages/LoginPage.js'
+
 describe('Fixture Test', function() {
 
     before(function () {
         cy.visit("https://ineuron-courses.vercel.app/login");
        
     })
-    
+    LoginPage.doLogin();
     it('Sign Up', function() {
 
         cy.fixture('user').then((testdata)=> {
@@ -14,7 +16,7 @@ describe('Fixture Test', function() {
             cy.get('input[name="password1"]').type(testdata.password);
         })
             
-      
+        
         cy.get('button[type="submit"]').click();
 
         cy.get('div.navbar-menu-links > button').should("be.visible");
