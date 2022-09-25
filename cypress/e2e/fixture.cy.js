@@ -15,11 +15,10 @@ describe('Fixture Test', function() {
 
         cy.visit("https://ineuron-courses.vercel.app/login");
 
-                 
+               
             cy.get('input[name="email1"]').type(this.user.name);
             cy.get('input[name="password1"]').type(this.user.password);
-      
-            
+                
         
         cy.get('button[type="submit"]').click();
 
