@@ -13,6 +13,4 @@ jobs:
         timeout-minutes: 10
         with:
           spec: cypress/e2e/frame.cy.js
-          record: true
-          parallel: true
           browser: chrome
