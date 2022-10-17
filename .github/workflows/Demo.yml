@@ -12,4 +12,5 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           spec: cypress/e2e/frame.cy.js
+          wait-on-timeout: 180
       
